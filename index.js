@@ -1,7 +1,7 @@
 var express = require('express')
 var engines = require('consolidate');
 var GoogleSpreadsheet = require("google-spreadsheet");
-var my_sheet = new GoogleSpreadsheet('<key>');
+var my_sheet = new GoogleSpreadsheet('1oWbXZKNsDFqlsktIZpbFFIKvNPLysvhjdTuXcNl3r9g');
 var bodyParser = require('body-parser');
 var app = express()
 
@@ -14,7 +14,11 @@ app.engine('html', engines.mustache);
 app.set('view engine', 'html');
 
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('index_nl');
+});
+
+app.get('/en', function (req, res) {
+  res.render('index_en');
 });
 
 app.post('/', function (req, res) {
@@ -37,12 +41,6 @@ app.post('/', function (req, res) {
 
   });
 });
-
-
-app.get('/temp', function (req, res) {
-});
-
-
 
 
 var server = app.listen(8083, function () {
