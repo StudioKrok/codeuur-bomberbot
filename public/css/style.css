@@ -117,8 +117,32 @@
 
 	section.special, article.special {
 		text-align: center;
+		border-bottom-width: 1px;
+		border-color: rgba(224, 224, 224, 0.75);
+		border-style: solid;
+		border-top-width: 1px;
+		padding: 4em 0;
+		margin-bottom: 6em;
+		position: relative;
+		background: #FFFFFF;
+	}
+	section.special:before, section.special:after {
+		background: rgba(224, 224, 224, 0.75);
+		content: '';
+		display: block;
+		height: 1px;
+		left: 0;
+		position: absolute;
+		width: 100%;
 	}
 
+	section.special:before {
+		top: 10px;
+	}
+
+	section.special:after {
+		bottom: 10px;
+	}
 	header {
 		text-align: center;
 	}
